@@ -18,10 +18,10 @@ class Member extends CI_Controller {
 
     public function index()
     {
-        echo "Selamat Datang ". $this->session->userdata('email');
-        echo "<br>";
-        echo anchor('auth/logout', 'Log Out');
-        echo "<br>";
+        $data['title'] = 'Codeigniter | Dashboard';
+        $data['user_email'] = $this->session->userdata('email');
+        $this->load->view('template/dashboard', $data, FALSE);
+        
     }
 
 }
